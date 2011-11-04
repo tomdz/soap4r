@@ -1,0 +1,2 @@
+This is a fork of the https://github.com/rubyjedi/soap4r soap4r fork that differs from it in that it relaxes the version constraint on its httpclient dependency (it allows version 2.2).
+

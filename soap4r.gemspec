@@ -1,7 +1,7 @@
 require 'rubygems'
 require File.join(File.dirname(__FILE__), 'lib', 'soap', 'version')
 
-PKG_NAME      = 'rubyjedi-soap4r'
+PKG_NAME      = 'tomdz-soap4r'
 PKG_BUILD     = ENV['PKG_BUILD'] ? ".#{ENV['PKG_BUILD']}" : ".#{Time.now.strftime('%Y%m%d%H%M%S')}"
 PKG_VERSION   = SOAP::VERSION::STRING + PKG_BUILD
 
@@ -12,10 +12,10 @@ SPEC = Gem::Specification.new do |s|
   s.version = PKG_VERSION
 
   s.author = "Laurence A. Lee, Hiroshi NAKAMURA"
-  s.email = "rubyjedi@gmail.com, nahi@ruby-lang.org"
-  s.homepage = "http://wiki.github.com/rubyjedi/soap4r"
+  s.email = "tritonrc@gmail.com, rubyjedi@gmail.com, nahi@ruby-lang.org"
+  s.homepage = "https://github.com/tomdz/soap4r"
 
-  s.add_dependency("httpclient", "~> 2.1.5.2")
+  s.add_dependency("httpclient", ">= 2.1.5.2")
 
   s.has_rdoc = false # disable rdoc generation until we've got more
   s.requirements << 'none'
