@@ -56,7 +56,12 @@ private
     normalizedlocation = location
     if location.scheme == 'file' or
         (location.relative? and FileTest.exist?(location.path))
-      content = File.open(location.path).read
+      begin
+        content = File.open(location.path).read
+      rescue
+        # To handle cases like being embedded in a jar (for jruby)
+        content = File.open(location.to_s).read
+      end
       normalizedlocation = URI.parse('file://' + File.expand_path(location.path))
     elsif location.scheme and location.scheme.size == 1 and
         FileTest.exist?(location.to_s)
